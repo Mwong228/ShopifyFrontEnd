@@ -1,0 +1,10 @@
+.heading {
+    font-size: 50px
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    border-radius: 4px; 
+}

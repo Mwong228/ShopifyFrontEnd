@@ -9,7 +9,7 @@ function Home() {
     return (
         <div class="container">
 
-            <Card title="The Shoppies Movies Awards for Entrepreneurs" sectioned>
+            <Card title="The Shoppies: Movies Awards for Entrepreneurs" sectioned>
                 <p>Nominate up to 5 of your favourite movies</p>
                 <br />
                 <Button onClick={() => start()}>Get Started</Button>
