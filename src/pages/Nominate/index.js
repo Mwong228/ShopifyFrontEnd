@@ -7,10 +7,8 @@ import axios from 'axios'
 require('dotenv').config()
 
 function Nominate() {
-    const [id, setId] = useState("")
     const [search, setSearch] = useState("")
     const [results, setResults] = useState([])
-    const [movie, setMovie] = useState([])
 
     useEffect( () => {
         init()
@@ -41,7 +39,7 @@ function Nominate() {
             <br/>
             <Layout>
                 <Layout.Section>
-                    <Results results={results} movie={movie}/>
+                    <Results results={results}/>
                 </Layout.Section>
                 <Layout.Section secondary>
                     <Nominations/>

@@ -1,4 +1,4 @@
-import {Modal, Button, TextContainer, DescriptionList, MediaCard, Layout} from '@shopify/polaris'
+import {Modal, Button, TextContainer, DescriptionList} from '@shopify/polaris'
 import React, {useState, useCallback} from 'react'
 
 function Movie(props){
