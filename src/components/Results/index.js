@@ -1,7 +1,16 @@
-import React, { useState, useEffect } from 'react'
 import {Card, MediaCard} from '@shopify/polaris'
+import { useState } from 'react'
+import Movie from '../../components/Movie-Info'
+import axios from 'axios'
+// import React, {useCallback, useState} from'react'
+
 
 function Results(props) {
+    
+    // const [active, setActive] = useState(true)
+    // const handleInputChange = useCallback(() => setActive(!active), [active])
+    const [movie, setMovie] = useState([])
+
 
     return (
         <Card title="Results" sectioned>
@@ -10,9 +19,16 @@ function Results(props) {
             title={search.Title}
             primaryAction={{
                 content: 'Nominate',
+                onAction: () => {console.log('Nominated')}
             }}
             secondaryAction={{
-                content: 'More Info'
+                content: <Movie movie={movie}/>,
+                onAction:     
+                async function movieDetails(){
+                    const movie = await axios.get(`http://www.omdbapi.com/?i=${search.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
+                    console.log(movie.data)
+                    setMovie(movie.data)
+                }
             }}
             description={search.Year}
             >

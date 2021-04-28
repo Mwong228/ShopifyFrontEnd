@@ -1,13 +1,16 @@
 import Search from '../../components/Search'
 import Results from '../../components/Results'
-import {Page, Layout, Card} from '@shopify/polaris'
+import Nominations from '../../components/Nominations'
+import {Page, Layout, } from '@shopify/polaris'
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 require('dotenv').config()
 
 function Nominate() {
+    const [id, setId] = useState("")
     const [search, setSearch] = useState("")
     const [results, setResults] = useState([])
+    const [movie, setMovie] = useState([])
 
     useEffect( () => {
         init()
@@ -38,12 +41,10 @@ function Nominate() {
             <br/>
             <Layout>
                 <Layout.Section>
-                    <Results results={results}/>
+                    <Results results={results} movie={movie}/>
                 </Layout.Section>
                 <Layout.Section secondary>
-                    <Card title="Nominated" sectioned>
-                        <p>movie 1</p>
-                    </Card>
+                    <Nominations/>
                 </Layout.Section>
             </Layout>
         </Page>

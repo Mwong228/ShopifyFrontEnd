@@ -4,8 +4,12 @@ import {Card} from '@shopify/polaris'
 
 function UserNominated(){
     return(
-        <Card>
-
+        <Card title="Nominated">
+            <Card.Section
+                title="Movie"
+                actions={[{content: 'Delete', destructive: true}]}
+            >
+            </Card.Section>
         </Card>
     )
 }
