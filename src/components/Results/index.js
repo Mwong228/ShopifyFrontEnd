@@ -5,18 +5,22 @@ function Results(props) {
 
     return (
         <Card title="Results" sectioned>
-            {props.results.title && props.results.title.map(img => <MediaCard 
-            title={props.results.title}
+            {props.results && props.results.map(search => 
+            <MediaCard key={search.imdbID}
+            title={search.Title}
             primaryAction={{
                 content: 'Nominate',
             }}
-            desciption={props.results.year}
+            secondaryAction={{
+                content: 'More Info'
+            }}
+            description={search.Year}
             >
             <img 
-            alt={props.results.title}
+            alt={search.Title}
             width= "100px"
             height= "100%"
-            src={props.results.poster}
+            src={search.Poster}
             />
             </MediaCard>)}
         </Card>

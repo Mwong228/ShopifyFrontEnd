@@ -15,8 +15,8 @@ function Nominate() {
 
     async function init() {
         const res = await axios.get(`http://www.omdbapi.com/?s=${search}&apikey=${process.env.REACT_APP_API_KEY}`)
-        console.log(res.data)
-        setResults(res.data)
+        console.log(res.data.Search)
+        setResults(res.data.Search)
     }
 
     function handleInputChange(event) {
