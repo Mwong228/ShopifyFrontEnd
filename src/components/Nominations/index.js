@@ -7,7 +7,7 @@ function UserNominated(){
         <Card title="Nominated">
             <Card.Section
                 title="Movie"
-                actions={[{content: 'Delete', destructive: true}]}
+                actions={{content: 'Delete', destructive: true, onAction: () => {console.log('hello')}}}
             >
             </Card.Section>
         </Card>
